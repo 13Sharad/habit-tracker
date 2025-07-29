@@ -22,8 +22,7 @@ A Next.js & MongoDB app for tracking daily habits, complete with secure authenti
 
 ## 🚀 Tech Stack
 
-- **Frontend:** Next.js (React), Tailwind CSS  
-- **Backend:** Node.js, Express, JWT authentication  
+- **Frontend and Backend:** Next.js and JWT authentication  
 - **Database:** MongoDB Atlas  
 - **Security:** bcrypt password hashing, JWT‑protected routes  
 
