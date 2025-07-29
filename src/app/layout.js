@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from '../components/Navbar';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "habit-tracker",
-  description: "A simple habit tracking application",
+  description: "Track and build your habits",
 };
 
 export default function RootLayout({ children }) {
@@ -22,7 +23,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+      <Navbar />
+      <main className="p-4 max-w-3xl mx-auto">{children}</main>
       </body>
     </html>
   );
