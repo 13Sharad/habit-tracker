@@ -1,5 +1,6 @@
 import clientPromise from '@/lib/mongodb';
 import jwt from 'jsonwebtoken';
+import { ObjectId } from 'mongodb';
 
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) throw new Error('Missing JWT_SECRET');
@@ -19,7 +20,7 @@ export async function GET(req) {
 
     // fetch last 30 days of completions
     const rows = await db.collection('completions')
-      .find({ userId })
+      .find({ userId: new ObjectId(userId) })
       .sort({ date: -1 })
       .limit(30)
       .toArray();
